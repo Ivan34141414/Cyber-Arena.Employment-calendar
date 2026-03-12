@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Календарь занятости</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+
+    <header class="top">
+      <div class="logo-wrap">
+        <img src="images/logo.png" alt="Логотип" class="logo-full" />
+      </div>
+
+      <h1 class="month-title">Апрель, 2026</h1>
+    </header>
+
+    <section class="calendar">
+      <div class="weekdays">
+        <div>ПН</div><div>ВТ</div><div>СР</div>
+        <div>ЧТ</div><div>ПТ</div><div>СБ</div><div>ВС</div>
+      </div>
+
+      <div class="grid">
+        <div class="cell empty"></div>
+        <div class="cell empty"></div>
+
+        <a href="day-1.html" class="cell-link">
+          <div class="cell">
+            <span class="date">1</span>
+            <div class="event busy">
+              <div class="event-title">ИГРОВАЯ</div>
+              <div class="event-text">каб. 201, 13:00-14:00</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="cell"><span class="date">2</span></div>
+        <div class="cell"><span class="date">3</span></div>
+
+        <a href="day-4.html" class="cell-link">
+          <div class="cell">
+            <span class="date">4</span>
+            <div class="event busy">
+              <div class="event-title">ТРЕНИРОВОЧНАЯ</div>
+              <div class="event-text">каб. 209, 10:00-11:00</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="cell"><span class="date">5</span></div>
+        <div class="cell"><span class="date">6</span></div>
+        <div class="cell"><span class="date">7</span></div>
+
+        <div class="cell">
+          <span class="date">8</span>
+          <div class="event soon">
+            <div class="event-title">ТРЕНИРОВОЧНАЯ</div>
+            <div class="event-text">каб. 207, освободится через 5 минут</div>
+          </div>
+        </div>
+
+        <div class="cell"><span class="date">9</span></div>
+        <div class="cell"><span class="date">10</span></div>
+        <div class="cell"><span class="date">11</span></div>
+        <div class="cell"><span class="date">12</span></div>
+
+        <div class="cell"><span class="date">13</span></div>
+
+        <div class="cell">
+          <span class="date">14</span>
+          <div class="event free">
+            <div class="event-title">ИГРОВАЯ</div>
+            <div class="event-text">каб. 208, свободно</div>
+          </div>
+        </div>
+
+        <div class="cell"><span class="date">15</span></div>
+        <div class="cell"><span class="date">16</span></div>
+        <div class="cell"><span class="date">17</span></div>
+
+        <a href="day-18.html" class="cell-link">
+          <div class="cell">
+            <span class="date">18</span>
+            <div class="event busy">
+              <div class="event-title">КОМАНДНАЯ</div>
+              <div class="event-text">каб. 213, 12:00-13:00</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="cell"><span class="date">19</span></div>
+
+        <div class="cell">
+          <span class="date">20</span>
+          <div class="event soon">
+            <div class="event-title">ИГРОВАЯ</div>
+            <div class="event-text">каб. 210, освободится через 10 минут</div>
+          </div>
+        </div>
+
+        <div class="cell"><span class="date">21</span></div>
+        <div class="cell"><span class="date">22</span></div>
+
+        <div class="cell">
+          <span class="date">23</span>
+          <div class="event free">
+            <div class="event-title">ТРЕНИРОВОЧНАЯ</div>
+            <div class="event-text">каб. 212, свободно</div>
+          </div>
+        </div>
+
+        <div class="cell"><span class="date">24</span></div>
+        <div class="cell"><span class="date">25</span></div>
+
+        <a href="day-26.html" class="cell-link">
+          <div class="cell">
+            <span class="date">26</span>
+            <div class="event busy">
+              <div class="event-title">ИГРОВАЯ</div>
+              <div class="event-text">каб. 210, 10:00-11:00</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="cell"><span class="date">27</span></div>
+        <div class="cell"><span class="date">28</span></div>
+
+        <div class="cell">
+          <span class="date">29</span>
+          <div class="event soon">
+            <div class="event-title">КОМАНДНАЯ</div>
+            <div class="event-text">каб. 208, освободится через 15 минут</div>
+          </div>
+        </div>
+
+        <div class="cell"><span class="date">30</span></div>
+        <div class="cell empty"></div>
+        <div class="cell empty"></div>
+        <div class="cell empty"></div>
+      </div>
+    </section>
+  </main>
+  <div class="booking-modal" id="bookingModal">
+  <div class="booking-modal-content">
+    <button class="booking-close" id="bookingClose">&times;</button>
+    <h2 class="booking-title">Добавление занятости</h2>
+
+    <p class="booking-subtitle" id="bookingDateText">Дата и время</p>
+
+<form id="bookingForm">
+
+  <label class="booking-label" for="fullName">ФИО</label>
+  <input type="text" id="fullName" class="booking-input" placeholder="Введите ФИО" required>
+
+  <label class="booking-label" for="groupNumber">Номер группы</label>
+  <input type="text" id="groupNumber" class="booking-input" placeholder="Введите номер группы" required>
+
+  <label class="booking-label" for="zoneType">Вид зоны</label>
+  <select id="zoneType" class="booking-input" required>
+    <option value="">Выберите зону</option>
+    <option value="ИГРОВАЯ">Игровая</option>
+    <option value="ТРЕНИРОВОЧНАЯ">Тренировочная</option>
+    <option value="КОМАНДНАЯ">Командная</option>
+  </select>
+
+  <label class="booking-label" for="roomNumber">Номер кабинета</label>
+  <input type="text" id="roomNumber" class="booking-input" placeholder="Например: 201" required>
+
+  <label class="booking-label" for="startTime">Время начала</label>
+  <select id="startTime" class="booking-input" required>
+    <option value="">Выберите время</option>
+    <option>8:00</option>
+    <option>9:00</option>
+    <option>10:00</option>
+    <option>11:00</option>
+    <option>12:00</option>
+    <option>13:00</option>
+    <option>14:00</option>
+    <option>15:00</option>
+    <option>16:00</option>
+    <option>17:00</option>
+    <option>18:00</option>
+    <option>19:00</option>
+    <option>20:00</option>
+  </select>
+
+  <label class="booking-label" for="endTime">Время окончания</label>
+  <select id="endTime" class="booking-input" required>
+    <option value="">Выберите время</option>
+    <option>9:00</option>
+    <option>10:00</option>
+    <option>11:00</option>
+    <option>12:00</option>
+    <option>13:00</option>
+    <option>14:00</option>
+    <option>15:00</option>
+    <option>16:00</option>
+    <option>17:00</option>
+    <option>18:00</option>
+    <option>19:00</option>
+    <option>20:00</option>
+  </select>
+
+  <button type="submit" class="booking-submit">Добавить занятость</button>
+
+</form>
+  </div>
+</div>
+<script>
+const bookingModal = document.getElementById("bookingModal");
+const bookingClose = document.getElementById("bookingClose");
+const bookingForm = document.getElementById("bookingForm");
+const bookingDateText = document.getElementById("bookingDateText");
+
+let selectedCell = null;
+
+const allCells = document.querySelectorAll(".grid .cell");
+
+allCells.forEach((cell) => {
+  const hasEvent = cell.querySelector(".event");
+  const date = cell.querySelector(".date");
+
+  if (!hasEvent && date) {
+    cell.style.cursor = "pointer";
+
+    cell.addEventListener("click", () => {
+      if (cell.classList.contains("busy-cell")) {
+        alert("Этот слот уже занят");
+        return;
+      }
+
+      selectedCell = cell;
+      bookingDateText.textContent =
+        "Добавление занятости на " + date.textContent + " апреля, 2026";
+
+      bookingModal.classList.add("active");
+    });
+  }
+});
+
+bookingClose.addEventListener("click", () => {
+  bookingModal.classList.remove("active");
+});
+
+bookingModal.addEventListener("click", (e) => {
+  if (e.target === bookingModal) {
+    bookingModal.classList.remove("active");
+  }
+});
+
+bookingForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const fullName = document.getElementById("fullName").value.trim();
+  const groupNumber = document.getElementById("groupNumber").value.trim();
+  const zoneType = document.getElementById("zoneType").value;
+  const roomNumber = document.getElementById("roomNumber").value.trim();
+  const startTime = document.getElementById("startTime").value;
+  const endTime = document.getElementById("endTime").value;
+
+  if (!fullName || !groupNumber || !zoneType || !roomNumber || !startTime || !endTime) {
+    alert("Пожалуйста заполните все поля");
+    return;
+  }
+
+  if (!selectedCell) return;
+
+  const eventDiv = document.createElement("div");
+  eventDiv.className = "event busy";
+
+  eventDiv.innerHTML = `
+    <div class="event-title">${zoneType}</div>
+    <div class="event-text">каб. ${roomNumber}, ${startTime}-${endTime}</div>
+  `;
+
+  selectedCell.appendChild(eventDiv);
+  selectedCell.classList.add("busy-cell");
+
+  alert(
+    "Занятость добавлена!\n\n" +
+    "ФИО: " + fullName + "\n" +
+    "Группа: " + groupNumber + "\n" +
+    "Зона: " + zoneType + "\n" +
+    "Кабинет: " + roomNumber + "\n" +
+    "Время: " + startTime + " - " + endTime
+  );
+
+  bookingForm.reset();
+  bookingModal.classList.remove("active");
+  selectedCell = null;
+});
+</script>
+</body>
+</html>
